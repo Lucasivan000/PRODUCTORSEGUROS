@@ -139,6 +139,7 @@ body {
     margin-top: 20px;
 }
 /* primeras dos secciones generico*/
+/* primeras dos secciones genérico */
 .section h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -156,6 +157,7 @@ body {
     margin: auto;
 }
 
+/* Primera sección */
 .section:first-of-type {
     background: linear-gradient(
         180deg,
@@ -164,9 +166,8 @@ body {
     );
 }
 
-/*section 2*/
-
-.section:nth-of-type(2) {
+/* Segunda sección: usando clase única */
+.section-asesor {
     position: relative;
     background-image: url("../assets/fondodeseccioncompartida.png");
     background-size: cover;
@@ -174,16 +175,42 @@ body {
     color: #ffffff;
 }
 
-.section:nth-of-type(2)::before {
+.section-asesor::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(96, 184, 247, 0.65);
 }
 
-.section:nth-of-type(2) > * {
+.section-asesor > * {
     position: relative;
 }
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 15px;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+        max-width: 95%;
+        margin: 0 auto 12px;
+        line-height: 1.5;
+    }
+
+    .section-asesor::before {
+        background: rgba(96, 184, 247, 0.75);
+    }
+}
+
+
+
+
 /* SECTIONS */
 .section {
     padding: 50px 20px;
