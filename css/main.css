@@ -317,6 +317,7 @@ footer {
     margin-bottom: 24px;
     font-size: 2.1rem;
     color: #0b2c4a; /* azul oscuro profesional */
+    
 }
 
 .benefits {
@@ -348,6 +349,7 @@ footer {
 /* =========================
    COLUMNA DERECHA
    ========================= */
+
 
 .contact-block form {
     max-width: 420px;
