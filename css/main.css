@@ -138,7 +138,52 @@ body {
     text-decoration: none;
     margin-top: 20px;
 }
+/* primeras dos secciones generico*/
+.sectionprimera h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
 
+.sectionprimera p {
+    max-width: 850px;
+    margin: 0 auto 15px;
+    line-height: 1.6;
+}
+
+.sectionprimera {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.sectionprimera:first-of-type {
+    background: linear-gradient(
+        180deg,
+        #eaf4fb 0%,
+        #ffffff 100%
+    );
+}
+
+/*section 2*/
+
+.sectionprimera:nth-of-type(2) {
+    position: relative;
+    background-image: url("../assets/fondodeseccioncompartida.png");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.sectionprimera:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(96, 184, 247, 0.65);
+}
+
+.sectionprimera:nth-of-type(2) > * {
+    position: relative;
+}
 /* SECTIONS */
 .section {
     padding: 50px 20px;
