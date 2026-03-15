@@ -246,28 +246,30 @@ footer {
 /* boton WP responsive */
 @media (max-width: 768px) {
     .whatsapp-float {
-        width: 56px;
-        height: 56px;
-        font-size: 26px;
+        width: 56px !important;
+        height: 56px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+        background: #25D366 !important;
+        border-radius: 50% !important;
 
         bottom: 16px;
         right: 16px;
     }
-}
-@media (max-width: 768px) {
 
-    /* Feedback al tocar (mobile) */
+    .whatsapp-float i {
+        font-size: 26px;
+        line-height: 1;
+    }
+
     .whatsapp-float:active {
         transform: scale(0.94);
         box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
     }
-
-    /* Feedback de foco (accesibilidad) */
-    .whatsapp-float:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.35);
-    }
-
 }
 
 /* RESPONSIVE */
