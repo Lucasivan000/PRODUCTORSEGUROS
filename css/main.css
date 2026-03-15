@@ -243,6 +243,18 @@ footer {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* boton WP responsive */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 26px;
+
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
 /* RESPONSIVE */
 @media (min-width: 768px) {
     .cards {
