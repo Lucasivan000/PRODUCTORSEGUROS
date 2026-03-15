@@ -173,6 +173,19 @@ h2 {
     color: var(--azul-electrico);
 }
 
+/* =========================
+   ANIMACIÓN HOVER CARDS
+   ========================= */
+
+.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
 /* BENEFITS */
 .benefits li {
     list-style: none;
@@ -462,7 +475,7 @@ footer {
     width: 100vw;
     height: 100%;
 
-    background-image: url("../assets/fondodeseccioncompartida.png");
+    background-image: url("../assets/fondoseccioncompartidados.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
