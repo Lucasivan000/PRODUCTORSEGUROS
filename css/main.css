@@ -254,6 +254,21 @@ footer {
         right: 16px;
     }
 }
+@media (max-width: 768px) {
+
+    /* Feedback al tocar (mobile) */
+    .whatsapp-float:active {
+        transform: scale(0.94);
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Feedback de foco (accesibilidad) */
+    .whatsapp-float:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.35);
+    }
+
+}
 
 /* RESPONSIVE */
 @media (min-width: 768px) {
