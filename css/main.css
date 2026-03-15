@@ -278,3 +278,165 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
+/* section WHY + CONTACT */
+
+.why-contact-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* =========================
+   COLUMNA IZQUIERDA
+   ========================= */
+
+.why-block {
+    padding-right: 20px;
+}
+
+.why-block h2 {
+    margin-bottom: 24px;
+    font-size: 2.1rem;
+    color: #0b2c4a; /* azul oscuro profesional */
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits li {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    color: #333;
+    padding-left: 18px;
+    position: relative;
+}
+
+/* Detalle visual sutil */
+.benefits li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    background-color: #5bc0eb; /* celeste */
+    border-radius: 50%;
+}
+
+/* =========================
+   COLUMNA DERECHA
+   ========================= */
+
+.contact-block form {
+    max-width: 420px;
+    background: #ffffff;
+    padding: 36px 34px;
+    border-radius: 16px;
+
+    border: 1px solid rgba(11, 44, 74, 0.15); /* azul oscuro sutil */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover sutil solo desktop */
+.contact-block form:hover {
+    transform: scale(1.02);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+    .why-contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-block form {
+        margin: 0 auto;
+        transform: none;
+    }
+}
+
+/* =========================
+   FORMULARIO – ESTILO UX/UI
+   ========================= */
+
+.contact-block form input,
+.contact-block form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+
+    font-size: 0.95rem;
+    color: #222;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 44, 74, 0.2); /* azul oscuro sutil */
+
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Altura textarea */
+.contact-block form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Focus limpio */
+.contact-block form input:focus,
+.contact-block form textarea:focus {
+    border-color: #5bc0eb;
+    box-shadow: 0 0 0 2px rgba(91, 192, 235, 0.25);
+}
+
+/* Placeholder */
+.contact-block form ::placeholder {
+    color: #888;
+}
+
+/* =========================
+   BOTÓN SUBMIT
+   ========================= */
+
+.contact-block form button {
+    width: 100%;
+    padding: 14px;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    background-color: #5bc0eb;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+/* Hover desktop */
+.contact-block form button:hover {
+    background-color: #3aaed8;
+    transform: translateY(-1px);
+}
+
+/* Feedback táctil */
+.contact-block form button:active {
+    transform: scale(0.97);
+}
