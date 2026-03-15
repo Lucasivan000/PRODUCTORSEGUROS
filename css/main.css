@@ -138,21 +138,16 @@ body {
     text-decoration: none;
     margin-top: 20px;
 }
-
-
-
 /* primeras dos secciones generico*/
 .sectionprimera h2 {
     text-align: center;
     margin-bottom: 25px;
-    font-size: 2rem; /* tamaño base de título */
 }
 
 .sectionprimera p {
     max-width: 850px;
     margin: 0 auto 15px;
     line-height: 1.6;
-    font-size: 1rem; /* tamaño base de párrafo */
 }
 
 .sectionprimera {
@@ -161,7 +156,6 @@ body {
     margin: auto;
 }
 
-/* primera sección: fondo claro */
 .sectionprimera:first-of-type {
     background: linear-gradient(
         180deg,
@@ -170,7 +164,8 @@ body {
     );
 }
 
-/* segunda sección: fondo con imagen */
+/*section 2*/
+
 .sectionprimera:nth-of-type(2) {
     position: relative;
     background-image: url("../assets/fondodeseccioncompartida.png");
@@ -183,68 +178,12 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(96, 184, 247, 0.65); /* overlay para legibilidad */
+    background: rgba(96, 184, 247, 0.65);
 }
 
 .sectionprimera:nth-of-type(2) > * {
     position: relative;
 }
-
-/* ---------------------------------- */
-/* MEDIA QUERIES PARA RESPONSIVE DESIGN */
-
-/* tablets y pantallas medianas */
-@media (max-width: 992px) {
-    .sectionprimera {
-        padding: 50px 15px;
-    }
-
-    .sectionprimera h2 {
-        font-size: 1.75rem;
-    }
-
-    .sectionprimera p {
-        font-size: 0.95rem;
-        max-width: 700px;
-    }
-}
-
-/* móviles */
-@media (max-width: 768px) {
-    .sectionprimera {
-        padding: 40px 15px;
-    }
-
-    .sectionprimera h2 {
-        font-size: 1.5rem;
-    }
-
-    .sectionprimera p {
-        font-size: 0.9rem;
-        max-width: 90%;
-    }
-
-    .sectionprimera:nth-of-type(2)::before {
-        background: rgba(96, 184, 247, 0.75); /* un poco más oscuro para mejorar legibilidad en pantallas chicas */
-    }
-}
-
-/* celulares muy pequeños */
-@media (max-width: 480px) {
-    .sectionprimera {
-        padding: 30px 10px;
-    }
-
-    .sectionprimera h2 {
-        font-size: 1.3rem;
-    }
-
-    .sectionprimera p {
-        font-size: 0.85rem;
-    }
-}
-
-
 /* SECTIONS */
 .section {
     padding: 50px 20px;
