@@ -217,14 +217,30 @@ footer {
 /* WHATSAPP */
 .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 24px;
+    right: 24px;
+
+    width: 64px;          /* tamaño del botón */
+    height: 64px;
+
     background: #25D366;
     color: white;
-    font-size: 24px;
-    padding: 15px;
+    font-size: 30px;      /* tamaño del ícono */
+
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 1000;
+    
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* RESPONSIVE */
