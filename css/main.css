@@ -291,6 +291,74 @@ h2 {
     cursor: pointer;
 }
 
+/* COBERTURAS DESTACADAS */
+
+/* Contenedor de las cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+    gap: 25px; /* espacio entre cards */
+    margin-top: 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* Cada tarjeta */
+.cardCobertura {
+    background: #ffffff; /* fondo blanco */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animación al pasar el mouse */
+.cardCobertura:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Icono de cada cobertura */
+.cardCobertura .card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Título de la card */
+.cardCobertura h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #1B365D; /* azul profundo */
+}
+
+/* Texto descriptivo */
+.cardCobertura p {
+    font-size: 0.95rem;
+    color: #333333;
+    line-height: 1.4;
+}
+
+/* Responsive: tablets */
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+/* Responsive: móviles */
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
+
 /* FOOTER */
 footer {
     background: var(--azul-profundo);
