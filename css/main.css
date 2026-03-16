@@ -139,34 +139,67 @@ body {
     margin-top: 20px;
 }
 /* primeras dos secciones generico*/
-/* primeras dos secciones genérico */
+/* ===============================
+   PRIMERAS DOS SECCIONES – GENÉRICO
+   =============================== */
+
+.section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+/* Grid de 3 columnas SOLO para estas dos secciones */
+.section:first-of-type,
+.section-asesor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    align-items: start; /* imagen alineada con el inicio del bloque */
+    gap: 50px;
+}
+
 .section h2 {
-    text-align: center;
     margin-bottom: 25px;
 }
 
 .section p {
-    max-width: 850px;
-    margin: 0 auto 15px;
     line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
+/* ===============================
+   PRIMERA SECCIÓN – FONDO + OVERLAY
+   =============================== */
 
-/* Primera sección */
 .section:first-of-type {
-    background: linear-gradient(
-        180deg,
-        #eaf4fb 0%,
-        #ffffff 100%
-    );
+    position: relative;
+    background-image: 
+        linear-gradient(
+            #1748eb73,
+            rgba(35, 66, 240, 0.45)
+        ),
+        url("../assets/fondodeseccioncompartida.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
 }
 
-/* Segunda sección: usando clase única */
+/* Texto por encima del overlay */
+.section:first-of-type > * {
+    position: relative;
+    z-index: 1;
+}
+
+.section:first-of-type h2 {
+    color: #ffffff;
+}
+
+/* ===============================
+   SEGUNDA SECCIÓN – FONDO + OVERLAY
+   =============================== */
+
 .section-asesor {
     position: relative;
     background-image: url("../assets/fondodeseccioncompartida.png");
@@ -184,10 +217,80 @@ body {
 
 .section-asesor > * {
     position: relative;
+    z-index: 1;
 }
 
-/* RESPONSIVE MOBILE */
+/* ===============================
+   BLOQUES DE CONTENIDO
+   =============================== */
+
+/* Imagen lateral ocupa 1 columna y TODAS las filas del bloque de contenido */
+.imagenPrimerSection,
+.imagenSegundaSection {
+    grid-column: span 1;
+    grid-row: 1 / -1; /* imagen ocupa toda la altura del bloque de contenido */
+}
+
+.imagenPrimerSection img,
+.imagenSegundaSection img {
+    width: 100%;
+    height: 100%; /* estira al alto del bloque de contenido */
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Contenido ocupa 2 columnas */
+.contenidoPrimerSection,
+.contenidoSegundaSelection {
+    grid-column: span 2;
+}
+
+/* ===============================
+   ORDEN VISUAL
+   =============================== */
+
+/* Primera sección: FOTO | CONTENIDO */
+.section:first-of-type .imagenPrimerSection {
+    grid-column: 1;
+}
+.contenidoPrimerSection {
+    grid-column: 2 / 4;
+}
+
+/* Segunda sección: CONTENIDO | FOTO */
+.contenidoSegundaSelection {
+    grid-column: 1 / 3;
+}
+.section-asesor .imagenSegundaSection {
+    grid-column: 3;
+}
+
+/* ===============================
+   RESPONSIVE MOBILE
+   =============================== */
+
 @media (max-width: 768px) {
+    .section:first-of-type,
+    .section-asesor {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .imagenPrimerSection,
+    .imagenSegundaSection,
+    .contenidoPrimerSection,
+    .contenidoSegundaSelection {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .imagenPrimerSection img,
+    .imagenSegundaSection img {
+        height: auto;
+    }
+
     .section {
         padding: 40px 15px;
     }
@@ -198,8 +301,6 @@ body {
 
     .section p {
         font-size: 0.9rem;
-        max-width: 95%;
-        margin: 0 auto 12px;
         line-height: 1.5;
     }
 
@@ -210,12 +311,11 @@ body {
 
 
 
-
 /* SECTIONS */
 .section {
+    width: 100%;
     padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
+    box-sizing: border-box;
 }
 
 .bg-light {
