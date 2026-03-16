@@ -146,11 +146,11 @@
                 <h2>Contacto</h2>
                 <p>Solicitá asesoramiento personalizado.</p>
 
-                <form>
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="tel" placeholder="Teléfono" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Mensaje"></textarea>
+                <form id="formularioEnvioGoogleSheets">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="tel" name="telefono" placeholder="Teléfono" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="mensaje" placeholder="Mensaje"></textarea>
                     <button type="submit">Solicitar asesoramiento</button>
                 </form>
             </div>
@@ -162,6 +162,7 @@
     <footer>
         <p>© Cardozo Seguros – Asesoramiento profesional en seguros</p>
     </footer>
+    <script src="./formulario.js"></script>
 
 </body>
 
