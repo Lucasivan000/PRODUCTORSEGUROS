@@ -176,8 +176,8 @@ body {
     position: relative;
     background-image: 
         linear-gradient(
-            #1748eb73,
-            rgba(35, 66, 240, 0.45)
+            rgba(1, 1, 122, 0.993),
+            rgba(33, 33, 253, 0.993)
         ),
         url("../assets/fondodeseccioncompartida.png");
     background-size: cover;
@@ -202,7 +202,12 @@ body {
 
 .section-asesor {
     position: relative;
-    background-image: url("../assets/fondodeseccioncompartida.png");
+    background-image:
+        linear-gradient(
+            white,
+            white
+        ),
+        url("../assets/fondodeseccioncompartida.png");
     background-size: cover;
     background-position: center;
     color: #ffffff;
