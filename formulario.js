@@ -59,7 +59,7 @@ formulario.addEventListener("submit", function(evento) {
     })
     .then(() => {
         divMensaje.innerText = "¡Formulario enviado correctamente!";
-        divMensaje.style.color = "green"; // Mensaje de éxito en verde
+        divMensaje.style.color = "green"; 
         formulario.reset();
     })
     .catch(error => {
