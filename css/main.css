@@ -842,24 +842,7 @@ footer {
     border-radius: 16px;
 }
 
-/*logo */
-@media (max-width: 768px) {
-    .logo-mini {
-        width: 28px;      /* un poco más pequeño para mobile */
-        height: 28px;
-        display: block;   /* asegurarse que esté visible */
-    }
 
-    .logo a {
-        font-size: 1.2rem; /* ajustar tamaño del texto para mobile */
-    }
-
-    .navbar-container {
-        padding: 10px 15px; /* menos padding en mobile */
-        align-items: center;
-        gap: 8px;
-    }
-}
 
 
 /* PARCHE MOBILE PROBLEMA PARA MAS ADELANTE*/ 
