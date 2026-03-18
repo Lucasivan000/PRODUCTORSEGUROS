@@ -17,7 +17,102 @@ body {
     color: var(--gris);
     line-height: 1.6;
 }
+/* NAVBAR */
+/* ===============================
+   NAVBAR
+   =============================== */
 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(31, 60, 136, 0.9); /* azul clásico semitransparente */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px); /* efecto sutil de difuminado */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #2ea8ff; /* celeste claro para hover */
+}
+
+/* MENU HAMBURGUESA - MOBILE */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(31, 60, 136, 0.95);
+        flex-direction: column;
+        width: 200px;
+        padding: 15px 0;
+        gap: 15px;
+        display: none; /* se activa con JS */
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Ajuste del header hero para no tapar contenido con navbar */
+.hero {
+    padding-top: 70px; /* altura aproximada del navbar */
+}
 /* Foto de portada HERO */
 
 /* HERO GENERAL */
@@ -42,7 +137,7 @@ body {
 /* IMAGEN COMO FONDO */
 .imagenPortada img {
   width: 100%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.80) contrast(1.05);
 }
