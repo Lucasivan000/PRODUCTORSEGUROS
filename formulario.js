@@ -68,3 +68,27 @@ formulario.addEventListener("submit", function(evento) {
         divMensaje.style.color = "red";
     });
 });
+
+
+
+
+
+/* MENU HAMBURGUESA MOBILE */
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
+
+// Toggle hamburguesa
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+});
+
+// Cerrar menú al hacer click en un enlace
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('open');
+    });
+});
