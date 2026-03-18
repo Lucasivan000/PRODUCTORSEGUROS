@@ -42,9 +42,9 @@ body {
 /* IMAGEN COMO FONDO */
 .imagenPortada img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
-  filter: brightness(0.55) contrast(1.05);
+  filter: brightness(0.80) contrast(1.05);
 }
 
 /* OVERLAY OSCURO PROFESIONAL */
@@ -54,9 +54,9 @@ body {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.45) 50%,
-    rgba(0, 0, 0, 0.35) 100%
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.1) 100%
   );
   z-index: 2;
 }
@@ -147,18 +147,80 @@ body {
     width: 100%;
     padding: 60px 20px;
     box-sizing: border-box;
+    background-color: white; /* fondo uniforme */
+    color: #000; /* texto negro para contraste */
 }
 
-/* Grid de 3 columnas SOLO para estas dos secciones */
-.section:first-of-type,
+/* ===============================
+   GRID DE COLUMNAS
+   =============================== */
+
+/* Primera sección: 2 columnas proporcionales */
+.section:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Segunda sección: texto a la izquierda, imagen al ancho del círculo */
 .section-asesor {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: auto;
-    align-items: start; /* imagen alineada con el inicio del bloque */
-    gap: 50px;
+    grid-template-columns: 1fr auto; /* texto flexible, imagen solo lo que necesita */
+    align-items: center;
+    gap: 40px;
 }
 
+/* Bloques de contenido */
+.imagenPrimerSection {
+    grid-column: 1;
+}
+
+.contenidoPrimerSection {
+    grid-column: 2;
+}
+
+.contenidoSegundaSelection {
+    grid-column: 1;
+}
+
+.imagenSegundaSection {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end; /* imagen pegada a la derecha */
+    align-items: center;
+}
+
+/* ===============================
+   FORMAS DE LAS IMÁGENES
+   =============================== */
+
+/* Primera sección: paralelogramo inclinado */
+.imagenPrimerSection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    display: block;
+}
+
+/* Segunda sección: círculo */
+.imagenSegundaSection img {
+    width: 500px; /* tamaño fijo */
+    height: 500px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    display: block;
+    transform: none; /* asegurarse que no se incline */
+}
+
+/* ===============================
+   TIPOGRAFÍA
+   =============================== */
 .section h2 {
     margin-bottom: 25px;
 }
@@ -169,113 +231,8 @@ body {
 }
 
 /* ===============================
-   PRIMERA SECCIÓN – FONDO + OVERLAY
-   =============================== */
-
-.section:first-of-type {
-    position: relative;
-    background-image: 
-        linear-gradient(
-            rgba(1, 1, 122, 0.993),
-            rgba(33, 33, 253, 0.993)
-        ),
-        url("../assets/fondodeseccioncompartida.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
-}
-
-/* Texto por encima del overlay */
-.section:first-of-type > * {
-    position: relative;
-    z-index: 1;
-}
-
-.section:first-of-type h2 {
-    color: #ffffff;
-}
-
-/* ===============================
-   SEGUNDA SECCIÓN – FONDO + OVERLAY
-   =============================== */
-
-.section-asesor {
-    position: relative;
-    background-image:
-        linear-gradient(
-            white,
-            white
-        ),
-        url("../assets/fondodeseccioncompartida.png");
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-}
-
-.section-asesor::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(96, 184, 247, 0.65);
-}
-
-.section-asesor > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* ===============================
-   BLOQUES DE CONTENIDO
-   =============================== */
-
-/* Imagen lateral ocupa 1 columna y TODAS las filas del bloque de contenido */
-.imagenPrimerSection,
-.imagenSegundaSection {
-    grid-column: span 1;
-    grid-row: 1 / -1; /* imagen ocupa toda la altura del bloque de contenido */
-}
-
-.imagenPrimerSection img,
-.imagenSegundaSection img {
-    width: 100%;
-    height: 100%; /* estira al alto del bloque de contenido */
-    display: block;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
-}
-
-/* Contenido ocupa 2 columnas */
-.contenidoPrimerSection,
-.contenidoSegundaSelection {
-    grid-column: span 2;
-}
-
-/* ===============================
-   ORDEN VISUAL
-   =============================== */
-
-/* Primera sección: FOTO | CONTENIDO */
-.section:first-of-type .imagenPrimerSection {
-    grid-column: 1;
-}
-.contenidoPrimerSection {
-    grid-column: 2 / 4;
-}
-
-/* Segunda sección: CONTENIDO | FOTO */
-.contenidoSegundaSelection {
-    grid-column: 1 / 3;
-}
-.section-asesor .imagenSegundaSection {
-    grid-column: 3;
-}
-
-/* ===============================
    RESPONSIVE MOBILE
    =============================== */
-
 @media (max-width: 768px) {
     .section:first-of-type,
     .section-asesor {
@@ -293,7 +250,14 @@ body {
 
     .imagenPrimerSection img,
     .imagenSegundaSection img {
+        width: 70%;
+        margin: 0 auto;
         height: auto;
+    }
+
+    .imagenSegundaSection {
+        justify-content: center; /* centrada en mobile */
+        margin-top: 30px;
     }
 
     .section {
@@ -308,13 +272,7 @@ body {
         font-size: 0.9rem;
         line-height: 1.5;
     }
-
-    .section-asesor::before {
-        background: rgba(96, 184, 247, 0.75);
-    }
 }
-
-
 
 /* SECTIONS */
 .section {
