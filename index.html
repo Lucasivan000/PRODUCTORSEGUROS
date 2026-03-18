@@ -223,6 +223,17 @@
         <p>© Cardozo Seguros – Asesoramiento profesional en seguros</p>
     </footer>
     <script src="./formulario.js"></script>
+    <script>
+        // Seleccionamos elementos
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Evento click
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // activa/desactiva el menú
+            menuToggle.classList.toggle('open'); // opcional: para animar hamburguesa
+        });
+    </script>
 
 </body>
 
