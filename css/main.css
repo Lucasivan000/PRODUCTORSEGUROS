@@ -478,7 +478,7 @@ h2 {
 .cardServicios-img {
     flex: 1;
     /* ocupa la mitad del espacio disponible */
-    max-width: 150px;
+    max-width: 220px;
     /* ancho máximo de la imagen */
     height: auto;
     aspect-ratio: 4/3;
