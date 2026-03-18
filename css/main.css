@@ -559,33 +559,55 @@ footer {
     padding: 15px;
 }
 
-/* WHATSAPP */
+/* WHATSAPP BOTÓN CON TEXTO */
 .whatsapp-float {
     position: fixed;
     bottom: 24px;
     right: 24px;
 
-    width: 64px;          /* tamaño del botón */
-    height: 64px;
-
-    background: #25D366;
-    color: white;
-    font-size: 30px;      /* tamaño del ícono */
-
-    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;             /* espacio entre icono y texto */
+    padding: 12px 20px;    /* tamaño del botón */
+    
+    background: #25D366;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
 
+    border-radius: 50px;   /* redondeado estilo píldora */
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     z-index: 1000;
-    
 }
+
+.whatsapp-float i {
+    font-size: 1.5rem;     /* tamaño del ícono */
+}
+
+/* Texto visible */
+.whatsapp-text {
+    display: inline-block;
+}
+
+/* Hover */
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* RESPONSIVE: móviles más pequeños */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    .whatsapp-float i {
+        font-size: 1.2rem;
+    }
 }
 
 /* boton WP responsive */
@@ -891,6 +913,51 @@ footer {
         width: 50px;
         height: 50px;
     }
+}
+
+/* FUENTE GLOBAL*/
+/* ===============================
+   FUENTE GLOBAL: OPEN SANS
+   =============================== */
+
+/* Aplicar Open Sans a todos los elementos excepto hero, navbar y footer */
+/* ===============================
+   FUENTE GLOBAL EXCLUYENDO HERO, NAVBAR, FOOTER Y BOTÓN WHATSAPP
+   =============================== */
+*:not(.hero):not(.hero *):not(.navbar):not(.navbar *):not(.footer):not(.footer *):not(.whatsapp-float):not(.whatsapp-float *) {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--gris);
+}
+
+/* Títulos y botones más fuertes, excluyendo hero, navbar y footer */
+h1:not(.hero h1):not(.navbar h1):not(.footer h1),
+h2:not(.hero h2):not(.navbar h2):not(.footer h2),
+h3:not(.hero h3):not(.navbar h3):not(.footer h3),
+h4:not(.hero h4):not(.navbar h4):not(.footer h4),
+h5:not(.hero h5):not(.navbar h5):not(.footer h5),
+h6:not(.hero h6):not(.navbar h6):not(.footer h6),
+button:not(.hero button):not(.navbar button):not(.footer button),
+.btn-primary:not(.hero .btn-primary):not(.navbar .btn-primary):not(.footer .btn-primary) {
+    font-weight: 600 !important; /* semi-bold */
+}
+
+/* Negritas reales */
+strong:not(.hero strong):not(.navbar strong):not(.footer strong),
+b:not(.hero b):not(.navbar b):not(.footer b) {
+    font-weight: 700 !important;
+}
+
+/* Inputs, textareas, selects y enlaces también heredan */
+input:not(.hero input):not(.navbar input):not(.footer input),
+textarea:not(.hero textarea):not(.navbar textarea):not(.footer textarea),
+select:not(.hero select):not(.navbar select):not(.footer select),
+a:not(.hero a):not(.navbar a):not(.footer a),
+span:not(.hero span):not(.navbar span):not(.footer span),
+li:not(.hero li):not(.navbar li):not(.footer li),
+p:not(.hero p):not(.navbar p):not(.footer p) {
+    font-weight: 400 !important;
 }
 
 
