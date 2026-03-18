@@ -80,32 +80,46 @@ body {
     border-radius: 2px;
 }
 
-/* ===============================
-   RESPONSIVE
-   =============================== */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        cursor: pointer;
+        z-index: 101; /* encima del nav links */
+    }
+
     .nav-links {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: rgba(31, 60, 136, 0.95);
+        position: fixed;
+        top: 60px; /* justo debajo del navbar */
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: #1F3C88; /* azul clásico oscuro */
         flex-direction: column;
-        width: 200px;
-        padding: 15px 0;
-        gap: 15px;
-        display: none; /* se activa con JS */
+        align-items: center;
+        gap: 25px;
+        padding: 0;
+        display: flex;
+        transition: height 0.3s ease, padding 0.3s ease;
     }
 
     .nav-links a {
-        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        transition: background 0.2s ease;
     }
 
-    .menu-toggle {
-        display: flex;
+    .nav-links a:hover {
+        background-color: rgba(0,0,0,0.15);
     }
 
     .nav-links.active {
-        display: flex;
+        height: calc(100vh - 60px); /* ocupar toda la pantalla debajo del navbar */
+        padding-top: 30px;
     }
 }
 
