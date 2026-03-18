@@ -101,25 +101,34 @@ body {
 /* ===========================
    NAVBAR MOBILE
    =========================== */
+/* NAVBAR MOBILE REVISADO */
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
         top: 60px;
-        /* justo debajo del navbar */
-        right: 0;
         left: 0;
+        right: 0;
         background-color: #1F3C88;
-        /* azul clásico oscuro */
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        padding: 0;
-        /* se añade al desplegar */
         overflow: hidden;
-        max-height: 0;
-        /* cerrado por defecto */
-        transition: max-height 0.3s ease, padding 0.3s ease;
-        z-index: 101;
+        height: 0;           /* antes era max-height */
+        transition: height 0.3s ease;
+        z-index: 101;        /* aseguramos que quede arriba del navbar */
+    }
+
+    .nav-links.active {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        z-index: 102;        /* sobre todo */
     }
 
     .nav-links a {
@@ -133,19 +142,6 @@ body {
 
     .nav-links a:hover {
         background-color: rgba(0, 0, 0, 0.15);
-    }
-
-    /* Abrir menú según contenido */
-    .nav-links.active {
-        max-height: 500px;
-        /* ajusta si agregas más enlaces */
-        padding: 15px 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-        cursor: pointer;
-        z-index: 101;
     }
 }
 
