@@ -80,20 +80,23 @@ body {
     border-radius: 2px;
 }
 
+/* ===========================
+   NAVBAR MOBILE
+   =========================== */
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
-        top: 60px; /* debajo del navbar */
+        top: 60px; /* justo debajo del navbar */
         right: 0;
         left: 0;
-        background-color: #1F3C88;
+        background-color: #1F3C88; /* azul clásico oscuro */
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        padding: 0;
+        padding: 0; /* se añade al desplegar */
         overflow: hidden;
-        height: 0; /* cerrado */
-        transition: height 0.3s ease, padding 0.3s ease;
+        max-height: 0; /* cerrado por defecto */
+        transition: max-height 0.3s ease, padding 0.3s ease;
         z-index: 100;
     }
 
@@ -112,7 +115,7 @@ body {
 
     /* Abrir menú según contenido */
     .nav-links.active {
-        height: auto;
+        max-height: 500px; /* ajusta si agregas más enlaces */
         padding: 15px 0;
     }
 

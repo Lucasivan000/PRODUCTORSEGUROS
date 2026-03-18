@@ -73,22 +73,20 @@ formulario.addEventListener("submit", function(evento) {
 
 
 
-/* MENU HAMBURGUESA MOBILE */
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
 
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links a');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('open');
+    });
 
-// Toggle hamburguesa
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('open');
-});
-
-// Cerrar menú al hacer click en un enlace
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('open');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('open');
+        });
     });
 });
