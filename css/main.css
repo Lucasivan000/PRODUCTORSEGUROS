@@ -21,6 +21,18 @@ body {
 /* ===============================
    NAVBAR
    =============================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espacio entre logo y texto */
+}
+
+.logo-mini {
+    width: 32px;  /* tamaño del logo */
+    height: 32px;
+    object-fit: contain;
+}
+
 
 .navbar {
     position: fixed;
@@ -499,6 +511,11 @@ h2 {
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
+/* titulos centrados */
+.tituloCentrado {
+    text-align: center;
+}
+
 /* Icono de cada cobertura */
 .cardCobertura .card-icon {
     width: 60px;
@@ -823,6 +840,25 @@ footer {
     background: rgba(255, 255, 255, 0.78);
     padding: 24px;
     border-radius: 16px;
+}
+
+/*logo */
+@media (max-width: 768px) {
+    .logo-mini {
+        width: 28px;      /* un poco más pequeño para mobile */
+        height: 28px;
+        display: block;   /* asegurarse que esté visible */
+    }
+
+    .logo a {
+        font-size: 1.2rem; /* ajustar tamaño del texto para mobile */
+    }
+
+    .navbar-container {
+        padding: 10px 15px; /* menos padding en mobile */
+        align-items: center;
+        gap: 8px;
+    }
 }
 
 
