@@ -16,7 +16,7 @@
 body {
     color: var(--gris);
     line-height: 1.6;
-    
+
 }
 
 /* NAVBAR */
@@ -106,7 +106,8 @@ body {
 
     .menu-toggle {
         display: flex;
-        z-index: 102; /* sobre todo */
+        z-index: 102;
+        /* sobre todo */
     }
 
     .nav-links {
@@ -117,19 +118,22 @@ body {
 
         background-color: #1F3C88;
         flex-direction: column;
-        align-items: stretch; /* 🔧 antes center */
-        gap: 0;               /* 🔧 antes 20px */
+        align-items: stretch;
+        /* 🔧 antes center */
+        gap: 0;
+        /* 🔧 antes 20px */
 
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s ease;
+        transition: max-height 0.35s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 
         z-index: 101;
     }
 
     .nav-links.active {
         max-height: 300px;
-        padding: 0; /* 🔧 evitamos huecos raros */
+        padding: 15px 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .nav-links a {
@@ -141,8 +145,12 @@ body {
         color: #fff;
         text-decoration: none;
 
-        background-color: rgba(255, 255, 255, 0.08); /* 🔧 fondo por item */
-        border-top: 1px solid rgba(255, 255, 255, 0.15); /* separación visual */
+        background-color: rgba(255, 255, 255, 0.08);
+        /* 🔧 fondo por item */
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        /* separación visual */
+
+        
     }
 
     .nav-links a:first-child {
@@ -151,6 +159,8 @@ body {
 
     .nav-links a:hover {
         background-color: rgba(255, 255, 255, 0.18);
+        color: var(--celeste);
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 }
 
@@ -663,7 +673,9 @@ footer {
 }
 
 /* WHATSAPP */
-/* WHATSAPP BOTÓN CON TEXTO */
+/* ===============================
+   BOTÓN WHATSAPP - PROFESIONAL RESPONSIVE
+   =============================== */
 .whatsapp-float {
     position: fixed;
     bottom: 24px;
@@ -672,9 +684,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* espacio entre icono y texto */
     padding: 12px 20px;
-    /* tamaño del botón */
 
     background: #25D366;
     color: #fff;
@@ -682,7 +692,6 @@ footer {
     font-weight: 600;
 
     border-radius: 50px;
-    /* redondeado estilo píldora */
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -691,10 +700,8 @@ footer {
 
 .whatsapp-float i {
     font-size: 1.5rem;
-    /* tamaño del ícono */
 }
 
-/* Texto visible */
 .whatsapp-text {
     display: inline-block;
 }
@@ -705,7 +712,7 @@ footer {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
-/* RESPONSIVE: móviles más pequeños */
+/* Móviles pequeños: hasta 480px */
 @media (max-width: 480px) {
     .whatsapp-float {
         padding: 10px 14px;
@@ -718,22 +725,26 @@ footer {
     }
 }
 
-/* boton WP responsive */
+/* Mobile tablet / hasta 768px */
 @media (max-width: 768px) {
     .whatsapp-float {
-        width: 56px !important;
-        height: 56px !important;
+        width: 56px;
+        height: 56px;
 
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        padding: 0 !important;
-        background: #25D366 !important;
-        border-radius: 50% !important;
+        padding: 0;
+        border-radius: 50%;
 
         bottom: 16px;
         right: 16px;
+    }
+
+    /* Ocultamos texto y solo queda ícono centrado */
+    .whatsapp-text {
+        display: none;
     }
 
     .whatsapp-float i {
