@@ -455,7 +455,7 @@ h2 {
     flex-direction: column;
     background: var(--blanco);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(31, 60, 136, 0.70);
     overflow: hidden;
     height: 100%;
     padding: 20px;
@@ -492,7 +492,8 @@ h2 {
     aspect-ratio: 4/3;
     /* asegura proporción */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.70);
 }
 
 /* Lista al lado de la imagen */
@@ -780,6 +781,7 @@ footer {
 
 .why-block {
     padding-right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
 }
 
 .why-block h2 {
@@ -1127,6 +1129,10 @@ p:not(.hero p):not(.navbar p):not(.footer p) {
 .icono {
   font-size: 65px;
   margin-bottom: 25px;
+  text-shadow: 
+    2px 2px 4px rgba(0,0,0,0.50),
+    2px 2px 4px rgba(10, 2, 131, 0.9);
+  
 }
 
 .paso h3 {
@@ -1139,4 +1145,8 @@ p:not(.hero p):not(.navbar p):not(.footer p) {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   color: #555;
+}
+
+.subTituloUno {
+    font-size: 2.4rem;
 }
