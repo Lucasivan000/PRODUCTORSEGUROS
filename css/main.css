@@ -16,6 +16,7 @@
 body {
     color: var(--gris);
     line-height: 1.6;
+    
 }
 
 /* NAVBAR */
@@ -101,55 +102,61 @@ body {
 /* ===========================
    NAVBAR MOBILE
    =========================== */
-/* NAVBAR MOBILE REVISADO */
 @media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #1F3C88;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        overflow: hidden;
-        height: 0;           /* antes era max-height */
-        transition: height 0.3s ease;
-        z-index: 101;        /* aseguramos que quede arriba del navbar */
-    }
-
-    .nav-links.active {
-        height: auto;
-        padding: 15px 0;
-    }
 
     .menu-toggle {
         display: flex;
+        z-index: 102; /* sobre todo */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background-color: #1F3C88;
         flex-direction: column;
-        gap: 4px;
-        cursor: pointer;
-        z-index: 102;        /* sobre todo */
+        align-items: stretch; /* 🔧 antes center */
+        gap: 0;               /* 🔧 antes 20px */
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+
+        z-index: 101;
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+        padding: 0; /* 🔧 evitamos huecos raros */
     }
 
     .nav-links a {
-        padding: 12px 0;
         width: 100%;
+        padding: 14px 0;
+
         text-align: center;
+        font-size: 1.2rem;
         color: #fff;
         text-decoration: none;
-        font-size: 1.2rem;
+
+        background-color: rgba(255, 255, 255, 0.08); /* 🔧 fondo por item */
+        border-top: 1px solid rgba(255, 255, 255, 0.15); /* separación visual */
+    }
+
+    .nav-links a:first-child {
+        border-top: none;
     }
 
     .nav-links a:hover {
-        background-color: rgba(0, 0, 0, 0.15);
+        background-color: rgba(255, 255, 255, 0.18);
     }
 }
 
+
 /* Ajuste del header hero para no tapar contenido con navbar */
-.hero {
-    padding-top: 70px;
-    /* altura aproximada del navbar */
-}
+
 
 /* Foto de portada HERO */
 

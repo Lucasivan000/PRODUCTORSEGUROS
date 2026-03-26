@@ -71,7 +71,7 @@ formulario.addEventListener("submit", function(evento) {
 
 
 
-
+/*menu hamburguesa.*/
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
