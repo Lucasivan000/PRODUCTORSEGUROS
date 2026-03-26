@@ -165,17 +165,12 @@ body {
 }
 
 
-/* Ajuste del header hero para no tapar contenido con navbar */
-
-
-/* Foto de portada HERO */
-
 /* ===============================
    HERO UNIFICADO
    =============================== */
 .hero {
     position: relative;
-    min-height: 85vh;
+    min-height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -231,6 +226,7 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
+    white-space: nowrap;
 }
 
 /* SUBTÍTULO */
@@ -1051,7 +1047,7 @@ footer {
    =============================== */
 /* Fuente global excluyendo hero, navbar, footer y whatsapp */
 *:not(.hero):not(.hero *):not(.navbar):not(.navbar *):not(.footer):not(.footer *):not(.whatsapp-float):not(.whatsapp-float *) {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
     font-weight: 400 !important;
     line-height: 1.6 !important;
     color: var(--gris) !important;
