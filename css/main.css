@@ -150,7 +150,7 @@ body {
         border-top: 1px solid rgba(255, 255, 255, 0.15);
         /* separación visual */
 
-        
+
     }
 
     .nav-links a:first-child {
@@ -201,38 +201,42 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.35) 0%,
-        rgba(0, 0, 0, 0.2) 50%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.1) 100%);
     z-index: 2;
 }
 
 /* CONTENIDO SOBRE LA IMAGEN */
-
+/* titulo */
 .hero-title {
-  text-align: center;
-  margin: 0 auto 1rem;
-  line-height: 1.1;
-  white-space: normal;
+    text-align: center;
+    margin: 0 auto 1rem;
+    line-height: 1.1;
+    white-space: normal;
+
 }
 
 /* Línea principal */
 .hero-main {
-  display: block;
-  font-size: clamp(3rem, 7vw, 5rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
+    display: block;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    font-family: 'Fira Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
+
 }
 
 /* Línea secundaria */
 .hero-sub {
-  display: block;
-  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-  font-weight: 400;
-  margin-top: 0.4rem;
+    display: block;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 400;
+    margin-top: 0.4rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
+    font-family: 'Fira Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /*  */
@@ -245,14 +249,7 @@ body {
     margin: 0 auto;
 }
 
-/* TÍTULO */
-.hero h1 {
-    font-size: clamp(2rem, 4vw, 4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    white-space: nowrap;
-}
+
 
 /* SUBTÍTULO */
 .hero p {
@@ -512,7 +509,8 @@ h2 {
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.70);
-    display: block; /* FIX iOS */
+    display: block;
+    /* FIX iOS */
 }
 
 /* Lista */
@@ -538,7 +536,8 @@ h2 {
 
     .cardServicios-content {
         flex-direction: column;
-        align-items: stretch; /* FIX iOS */
+        align-items: stretch;
+        /* FIX iOS */
         text-align: left;
     }
 
@@ -571,14 +570,16 @@ h2 {
 
     .cardServicios-content {
         flex-direction: column;
-        align-items: stretch; /* MUY IMPORTANTE */
+        align-items: stretch;
+        /* MUY IMPORTANTE */
     }
 
     .cardServicios-img {
         width: 100%;
         aspect-ratio: 16 / 9;
         object-fit: cover;
-        display: block; /* elimina espacio fantasma iOS */
+        display: block;
+        /* elimina espacio fantasma iOS */
     }
 
     .cardServicios-content ul {
@@ -1144,58 +1145,59 @@ p:not(.hero p):not(.navbar p):not(.footer p) {
 /* PARCHE MOBILE PROBLEMA PARA MAS ADELANTE*/
 
 .atencion-personalizada {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  background: linear-gradient(to bottom, #1F3C88, var(--celeste-claro));
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #1F3C88, var(--celeste-claro));
 }
 
 .pasos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
 }
 
 .paso {
-  max-width: 350px;
-  width: 300px;       /* ancho fijo */
-  height: 250px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-  background: linear-gradient(135deg, #e6f0fa, #ffffff);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 350px;
+    width: 300px;
+    /* ancho fijo */
+    height: 250px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background: linear-gradient(135deg, #e6f0fa, #ffffff);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .paso:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .icono {
-  font-size: 65px;
-  margin-bottom: 25px;
-  text-shadow: 
-    2px 2px 4px rgba(0,0,0,0.50),
-    2px 2px 4px rgba(10, 2, 131, 0.9);
-  
+    font-size: 65px;
+    margin-bottom: 25px;
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.50),
+        2px 2px 4px rgba(10, 2, 131, 0.9);
+
 }
 
 .paso h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
-  margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    margin-bottom: 8px;
 }
 
 .paso p {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  color: #555;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #555;
 }
 
 .subTituloUno {
