@@ -215,6 +215,7 @@ body {
     margin: 0 auto 1rem;
     line-height: 1.1;
     white-space: normal;
+    
 
 }
 
@@ -237,6 +238,7 @@ body {
     margin-top: 0.4rem;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.30);
     font-family: 'Fira Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin-bottom: 1.2rem;
 }
 
 /*  */
