@@ -1049,7 +1049,7 @@ footer {
    FUENTE GLOBAL EXCLUYENDO HERO, NAVBAR, FOOTER Y BOTÓN WHATSAPP
    =============================== */
 /* Fuente global excluyendo hero, navbar, footer y whatsapp */
-*:not(.hero):not(.hero *):not(.navbar):not(.navbar *):not(.footer):not(.footer *):not(.whatsapp-float):not(.whatsapp-float *) {
+*:not(.hero):not(.hero *):not(.navbar):not(.navbar *):not(.footer):not(.footer *):not(.whatsapp-float):not(.whatsapp-float *):not(.subTituloUno) {
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 400 !important;
     line-height: 1.6 !important;
@@ -1148,5 +1148,10 @@ p:not(.hero p):not(.navbar p):not(.footer p) {
 }
 
 .subTituloUno {
-    font-size: 2.4rem;
+    font-size: 2.4rem !important;
+    color: white !important;
+}
+
+.tituloCentrado {
+    font-size: 2rem !important;
 }
