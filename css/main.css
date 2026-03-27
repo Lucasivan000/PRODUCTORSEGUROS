@@ -441,13 +441,15 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* CARDS */
+/* ===================== */
+/* CARDS - DESKTOP */
+/* ===================== */
+
 .cardsServicios {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: stretch;
-    /* todas las cards igual altura */
 }
 
 .cardServicios {
@@ -457,11 +459,10 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(31, 60, 136, 0.70);
     overflow: hidden;
-    height: 100%;
     padding: 20px;
-    /* asegura que todas tengan igual altura */
 }
 
+/* Título */
 .cardServicios h3 {
     color: var(--azul-electrico);
     text-align: center;
@@ -469,69 +470,94 @@ h2 {
     font-size: 1.2rem;
 }
 
-/* Contenido: imagen y lista lado a lado */
+/* Contenido imagen + lista */
 .cardServicios-content {
     display: flex;
-    flex-direction: row;
-    /* lado a lado */
     gap: 15px;
     padding: 0 10px 25px;
-    flex-grow: 1;
-    /* ocupa todo el espacio para mantener altura */
+    flex: 1;
     align-items: flex-start;
-    /* alinea la imagen y lista arriba */
 }
 
-/* Imagen adaptada */
+/* Imagen */
 .cardServicios-img {
-    flex: 1;
-    /* ocupa la mitad del espacio disponible */
+    width: 100%;
     max-width: 240px;
-    /* ancho máximo de la imagen */
-    height: auto;
-    aspect-ratio: 4/3;
-    /* asegura proporción */
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.70);
+    display: block; /* FIX iOS */
 }
 
-/* Lista al lado de la imagen */
+/* Lista */
 .cardServicios-content ul {
-    flex: 2;
-    /* ocupa el resto del espacio */
-    padding-left: 70px;
+    flex: 1;
+    padding-left: 30px;
+    margin: 0;
 }
 
 .cardServicios-content li {
     margin-bottom: 6px;
 }
 
-/* Responsive tablets */
+
+/* ===================== */
+/* TABLETS */
+/* ===================== */
 @media (max-width: 900px) {
+
     .cardsServicios {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .cardServicios-content {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch; /* FIX iOS */
+        text-align: left;
+    }
+
+    .cardServicios-img {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 10px;
     }
 
     .cardServicios-content ul {
         padding-left: 0;
     }
-
-    .cardServicios-img {
-        max-width: 100%;
-        aspect-ratio: auto;
-    }
 }
 
-/* Responsive móviles */
+
+/* ===================== */
+/* MÓVILES (ANDROID + IPHONE) */
+/* ===================== */
 @media (max-width: 600px) {
+
     .cardsServicios {
         grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .cardServicios {
+        height: auto;
+    }
+
+    .cardServicios-content {
+        flex-direction: column;
+        align-items: stretch; /* MUY IMPORTANTE */
+    }
+
+    .cardServicios-img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block; /* elimina espacio fantasma iOS */
+    }
+
+    .cardServicios-content ul {
+        padding-left: 0;
     }
 }
 
