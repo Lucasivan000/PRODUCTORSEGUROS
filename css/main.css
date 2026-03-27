@@ -211,6 +211,31 @@ body {
 }
 
 /* CONTENIDO SOBRE LA IMAGEN */
+
+.hero-title {
+  text-align: center;
+  margin: 0 auto 1rem;
+  line-height: 1.1;
+  white-space: normal;
+}
+
+/* Línea principal */
+.hero-main {
+  display: block;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* Línea secundaria */
+.hero-sub {
+  display: block;
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  font-weight: 400;
+  margin-top: 0.4rem;
+}
+
+/*  */
 .hero h1,
 .hero p,
 .hero .btn-primary {
@@ -222,7 +247,7 @@ body {
 
 /* TÍTULO */
 .hero h1 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(2rem, 4vw, 4rem);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -268,7 +293,7 @@ body {
     }
 
     .hero h1 {
-        font-size: clamp(1.6rem, 5vw, 2.4rem);
+        font-size: clamp(2.2rem, 5vw, 3rem);
     }
 
     .hero p {
