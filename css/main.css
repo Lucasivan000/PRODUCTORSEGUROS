@@ -215,7 +215,7 @@ body {
     margin: 0 auto 1rem;
     line-height: 1.1;
     white-space: normal;
-    
+
 
 }
 
@@ -307,90 +307,116 @@ body {
     }
 }
 
-/* primeras dos secciones generico*/
-/* ===============================
-   PRIMERAS DOS SECCIONES – GENÉRICO
-   =============================== */
+/* CARDS DE SERVICIOS */
+/* ===================== */
+/* GRID DE CARDS */
+/* ===================== */
 
-.section {
-    width: 100%;
-    padding: 60px 20px;
-    box-sizing: border-box;
-    background-color: white;
-    /* fondo uniforme */
-    color: #000;
-    /* texto negro para contraste */
-}
-
-/* ===============================
-   GRID DE COLUMNAS
-   =============================== */
-
-/* Primera sección: 2 columnas proporcionales */
-.section:first-of-type {
+.cardsServicios {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
 }
 
-/* Segunda sección: texto a la izquierda, imagen al ancho del círculo */
-.section-asesor {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    /* texto flexible, imagen solo lo que necesita */
-    align-items: center;
-    gap: 40px;
-}
+/* ===================== */
+/* CARD */
+/* ===================== */
 
-/* Bloques de contenido */
-.imagenPrimerSection {
-    grid-column: 1;
-}
-
-.contenidoPrimerSection {
-    grid-column: 2;
-}
-
-.contenidoSegundaSelection {
-    grid-column: 1;
-}
-
-.imagenSegundaSection {
-    grid-column: 2;
+.cardServicios {
     display: flex;
-    justify-content: flex-end;
-    /* imagen pegada a la derecha */
-    align-items: center;
-}
-
-/* ===============================
-   FORMAS DE LAS IMÁGENES
-   =============================== */
-
-/* Primera sección: paralelogramo inclinado */
-.imagenPrimerSection img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    flex-direction: column;
+    background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================== */
+/* TITULO */
+/* ===================== */
+
+.cardServicios h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    
+}
+
+/* ===================== */
+/* CONTENIDO (SIEMPRE VERTICAL) */
+/* ===================== */
+
+.cardServicios-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    /* fuerza misma altura */
+}
+
+/* ===================== */
+/* IMAGEN (MISMO TAMAÑO SIEMPRE) */
+/* ===================== */
+
+.cardServicios-img {
+    width: 100%;
+    height: 180px;
+    /* MISMO ALTO EN TODAS */
+    object-fit: cover;
+    border-radius: 12px;
     display: block;
 }
 
-/* Segunda sección: círculo */
-.imagenSegundaSection img {
-    width: 500px;
-    /* tamaño fijo */
-    height: 500px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
-    display: block;
-    transform: none;
-    /* asegurarse que no se incline */
+/* ===================== */
+/* LISTA */
+/* ===================== */
+
+.cardServicios-content ul {
+    margin: 0 auto;          /* centra el bloque */
+    padding-left: 0;
+    max-width: 280px;        /* controla el ancho visual */
+    text-align: left;        /* texto legible */
+}
+
+.cardServicios-content li {
+    margin-bottom: 6px;   
+    font-size: clamp(1rem, 1vw, 1.2rem);
+    line-height: 1.5;
+}
+}
+
+/* ===================== */
+/* TABLET */
+/* ===================== */
+
+@media (max-width: 1024px) {
+    .cardsServicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* centra la tercera card */
+    .cardsServicios>.cardServicios:last-child {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width: 600px) {
+    .cardsServicios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cardsServicios>.cardServicios {
+        max-width: 100%;
+        margin: 0;
+    }
 }
 
 /* ===============================
@@ -408,48 +434,7 @@ body {
 /* ===============================
    RESPONSIVE MOBILE
    =============================== */
-@media (max-width: 768px) {
 
-    .section:first-of-type,
-    .section-asesor {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .imagenPrimerSection,
-    .imagenSegundaSection,
-    .contenidoPrimerSection,
-    .contenidoSegundaSelection {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .imagenPrimerSection img,
-    .imagenSegundaSection img {
-        width: 70%;
-        margin: 0 auto;
-        height: auto;
-    }
-
-    .imagenSegundaSection {
-        justify-content: center;
-        /* centrada en mobile */
-        margin-top: 30px;
-    }
-
-    .section {
-        padding: 40px 15px;
-    }
-
-    .section h2 {
-        font-size: 1.5rem;
-    }
-
-    .section p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-}
 
 /* SECTIONS */
 .section {
@@ -471,125 +456,7 @@ h2 {
 /* CARDS - DESKTOP */
 /* ===================== */
 
-.cardsServicios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    align-items: stretch;
-}
 
-.cardServicios {
-    display: flex;
-    flex-direction: column;
-    background: var(--blanco);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(31, 60, 136, 0.70);
-    overflow: hidden;
-    padding: 20px;
-}
-
-/* Título */
-.cardServicios h3 {
-    color: var(--azul-electrico);
-    text-align: center;
-    margin: 15px;
-    font-size: 1.2rem;
-}
-
-/* Contenido imagen + lista */
-.cardServicios-content {
-    display: flex;
-    gap: 15px;
-    padding: 0 10px 25px;
-    flex: 1;
-    align-items: flex-start;
-}
-
-/* Imagen */
-.cardServicios-img {
-    width: 100%;
-    max-width: 240px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.70);
-    display: block;
-    /* FIX iOS */
-}
-
-/* Lista */
-.cardServicios-content ul {
-    flex: 1;
-    padding-left: 30px;
-    margin: 0;
-}
-
-.cardServicios-content li {
-    margin-bottom: 6px;
-}
-
-
-/* ===================== */
-/* TABLETS */
-/* ===================== */
-@media (max-width: 900px) {
-
-    .cardsServicios {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cardServicios-content {
-        flex-direction: column;
-        align-items: stretch;
-        /* FIX iOS */
-        text-align: left;
-    }
-
-    .cardServicios-img {
-        max-width: 100%;
-        aspect-ratio: 16 / 9;
-        margin-bottom: 10px;
-    }
-
-    .cardServicios-content ul {
-        padding-left: 0;
-    }
-}
-
-
-/* ===================== */
-/* MÓVILES (ANDROID + IPHONE) */
-/* ===================== */
-@media (max-width: 600px) {
-
-    .cardsServicios {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        align-items: stretch;
-    }
-
-    .cardServicios {
-        height: auto;
-    }
-
-    .cardServicios-content {
-        flex-direction: column;
-        align-items: stretch;
-        /* MUY IMPORTANTE */
-    }
-
-    .cardServicios-img {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        display: block;
-        /* elimina espacio fantasma iOS */
-    }
-
-    .cardServicios-content ul {
-        padding-left: 0;
-    }
-}
 
 /* =========================
    ANIMACIÓN HOVER CARDS
